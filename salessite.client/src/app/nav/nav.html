@@ -4,6 +4,7 @@
   <button
     type="button"
     class="toggle"
+    [class.open]="menuOpen()"
     aria-controls="nav-links"
     aria-label="Toggle navigation"
     [attr.aria-expanded]="menuOpen()"
