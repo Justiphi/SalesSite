@@ -1,4 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using SalesSite.Server.Database;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Identity Context
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// Application Context
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
