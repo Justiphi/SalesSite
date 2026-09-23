@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <a class="brand" routerLink="/" (click)="closeMenu()">SalesSite</a>
+
+  <button
+    type="button"
+    class="toggle"
+    aria-controls="nav-links"
+    aria-label="Toggle navigation"
+    [attr.aria-expanded]="menuOpen()"
+    (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <ul id="nav-links" class="links" [class.open]="menuOpen()">
+    @for (link of links; track link.path) {
+      <li>
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          (click)="closeMenu()">
+          {{ link.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

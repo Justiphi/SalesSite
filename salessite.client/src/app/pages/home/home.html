@@ -1,0 +1,64 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts(); as rows) {
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (forecast of rows; track forecast.date) {
+    <tr>
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+} @else {
+<p>
+  <em>
+    Loading... Please refresh once the ASP.NET backend has started. See
+    <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a>
+    for more details.
+  </em>
+</p>
+}
+
+<br />
+<br />
+<br />
+
+<h1>Travis Wylie - Home</h1>
+
+<h1>Hello, world!</h1>
+<p>My name is Travis Wylie, I am a software developer currently seeking a new opportunity.</p>
+
+<br />
+<p>With 7 years of professional software development experience on top of having completed freelance work and mentoring, I have contributed to the development of many kinds of different applications while still finding time to continue with my own projects.</p>
+<p>In my previous employment, I have been responsible for aiding the training of new staff members both locally and remote, while creating additional applications to help colleagues with timekeeping. As a result, time logs were more accurate and less time was taken to keep these logs as the software integrated with company systems by API.</p>
+<p>I have also had experience working remotely using time management skills and communication to assist collegues with various tasks while working on projects in varying timezones.</p>
+<p>I am currently seeking an employment opportunity that would allow me to utilize my current experience and continue to grow as a developer while allowing me to follow my passion of creating new and exciting software.</p>
+<br />
+
+<p>I also have a web portfolio made in React</p>
+<Button Type="ButtonType.Link" Color="ButtonColor.Info" To="https://react.traviswylie.co.nz">Go to React Site</Button>
+
+<br />
+<br />
+<br />
+<p><i>No AI required in the making of this site.</i></p>
+<br />
+<br />
+
+<h2>CV:</h2>
+<p>You can view my paper CV through the following link:</p>
+<Button Type="ButtonType.Link" Color="ButtonColor.Info" To="https://drive.google.com/file/d/1tDHiBeaDQXg8N4GZfSC6oSyP4ae8egjP/view?usp=sharing">CV as PDF</Button>
